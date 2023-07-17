@@ -1,0 +1,16 @@
+.todo {
+  max-width: 900px;
+  border: solid;
+  padding: 24px;
+  &-body {
+    border: solid;
+    padding: 24px;
+    margin-top: 24px;
+    &-item {
+      border: solid;
+      padding: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
