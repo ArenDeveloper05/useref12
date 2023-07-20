@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { HomeContext } from "../../Home";
 
 const TodoHead = () => {
-  const { inputValue, setInputValue, setTodos } = useContext(HomeContext);
+  const { inputValue, setInputValue, setTodos, dispatch, state } =
+    useContext(HomeContext);
 
   return (
     <div className="todo-head">
@@ -15,14 +16,9 @@ const TodoHead = () => {
       />
       <button
         onClick={() => {
-          setTodos((prev) => {
-            return [
-              ...prev,
-              {
-                id: prev.length + 1,
-                title: inputValue,
-              },
-            ];
+          dispatch({
+            type: "add_todo",
+            title: inputValue,
           });
         }}
       >
